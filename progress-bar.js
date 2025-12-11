@@ -1,3 +1,25 @@
+/**
+ *
+ * Copyright (c) 2025 Chuck Hutchinson
+ *
+ * This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.
+ * To view a copy of this license, visit [creativecommons.org](creativecommons.org)
+ * or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * The background images used in this plugin (see CSS file) were derived from https://www.svgbackgrounds.com/
+ * See https://www.svgbackgrounds.com/elements/animated-svg-preloaders/
+ */
 (function($) {
 
     function getRandomNumber(min, max) {
@@ -57,7 +79,6 @@
 			class: settings.overlayClass
 		});
 
-
 		$progressBarOverlay.append($progressbar);
 
 		if (settings.message != undefined) {
@@ -75,9 +96,6 @@
         }
 
 		$container.append($progressBarOverlay);
-
-		console.log ('settings.show == ' + settings.show);
-		console.log ('settings.backgroundClass == ' + settings.backgroundClass);
 
 		if (settings.show == false) {
 			$container.hide();
