@@ -12,7 +12,18 @@
 
 	<link rel="stylesheet" href="progress-bar.css">
 	<script src="progress-bar.js"></script>
-
+<style>
+    /* CSS to style the code block */
+    code {
+        display: block; /* Makes the code behave like a block element, filling its container width */
+        padding: 15px;  /* Adds space between the text and the border */
+        margin: 20px 0; /* Adds space above and below the code block */
+        border: 2px solid #ccc; /* Defines the border: width, style (solid), and color */
+        background-color: #f9f9f9; /* Optional: adds a light gray background */
+        font-family: monospace; /* Ensures code font is used */
+        white-space: pre-wrap; /* Ensures long lines wrap if needed */
+    }
+</style>
 <script>
 // https://www.svgbackgrounds.com/elements/animated-svg-preloaders/
 
@@ -53,6 +64,48 @@ function hideProgressBar(container) {
 							<a target="_blank" rel="noopener noreferrer" href="https://www.svgbackgrounds.com/">SVG Backgrounds</a> is the source for <a target="_blank" rel="noopener noreferrer" href="https://www.svgbackgrounds.com/elements/animated-svg-preloaders/">SVG Images</a> used in these Progress Bars.
 							Don't forget to provide attribution for those images in your project.
 						</p>
+
+						<p class="card-text">
+						Here is how you could put the control on your webpage
+						<pre><code>
+&lt;div class="card-body"&gt;
+    &lt;div class="btn-group" role="group" aria-label="Basic example"&gt;
+        &lt;button onclick="toggleProgressBar($('#progress-bar1'))"&gt;Toggle&lt;/button&gt;
+        &lt;button onclick="showProgressBar($('#progress-bar1'))"&gt;Show&lt;/button&gt;
+        &lt;button onclick="hideProgressBar($('#progress-bar1'))"&gt;Hide&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div id="progress-bar1"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $(document).ready(function() {
+            $('#progress-bar1').progressBar({ show: true });
+        });
+    &lt;/script&gt;
+&lt;/div&gt;</code></pre>
+						Here is how you would integrate showing and hiding the progress bar in an AJAX call
+						<pre><code>
+        $(document).ready(function() {
+            $('#progress-bar1').show();
+
+            $.ajax({
+                url: 'your_api_endpoint',
+                type: 'GET', // or 'POST', 'PUT', 'DELETE', etc.
+                dataType: 'json', // expected data type from the server
+                success: function(data, textStatus, jqXHR) {
+                    // This function is called on success (HTTP 200 OK)
+                    console.log('Success callback: Request was successful.');
+                    console.log('Returned data:', data);
+                    // Process your REST data here
+                },
+                complete: function(jqXHR, textStatus) {
+                    $('#progress-bar1').hide();
+                    // This function is always called, regardless of success or failure
+                    console.log('Complete callback: Request finished (success or error).');
+                }
+            });
+        });</code></pre>
+						</p>
+
+
 
 						<p class="card-txt">
 							This page was constructed using <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">Bootstrap 5.3.8</a>
