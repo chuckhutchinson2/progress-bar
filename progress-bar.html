@@ -51,67 +51,76 @@ function hideProgressBar(container) {
 		<div class="row g-2">
 			<div class="col">
 				<div class="card p-3 bg-light">
-					<div class="card-header"><a target="_blank" rel="noopener noreferrer" href="https://github.com/chuckhutchinson2/progress-bar">jQuery 3.7.1 Progress Bar plugin</a></div>
+					<div class="card-header" id="headingOne">
+						<h2 class="mb-0">
+							<button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+								Collapsible
+							</button>
+							<a class="card-link" target="_blank" rel="noopener noreferrer" href="https://github.com/chuckhutchinson2/progress-bar">jQuery 3.7.1 Progress Bar plugin</a>
+						</h2>
 
-					<div class="card-body">
-						<p class="card-text">
-							This is a jQuery 3.7.1 progress bar plugin.
-							It has 12 different custom CSS background images and supports labels.
-							See below for the different customizations.
-						</p>
-						<p class="card-text">
-						A progress bar is used to provide a visual indicator of the status of an ongoing process to the user. It helps manage user expectations during operations that require waiting, such as file uploads, downloads, installations, form submissions, or data processing, thereby improving the overall user experience by reducing uncertainty and anxiety.
-						</p>
+					</div>
+					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+						<div class="card-body">
+							<p class="card-text">
 
-						<p class="card-text">
-							<a class="card-link" target="_blank" rel="noopener noreferrer" href="https://www.svgbackgrounds.com/">SVG Backgrounds</a> is the source for <a target="_blank" rel="noopener noreferrer" href="https://www.svgbackgrounds.com/elements/animated-svg-preloaders/">SVG Images</a> used in these Progress Bars.
-							Don't forget to provide attribution for those images in your project.
-						</p>
+								This is a jQuery 3.7.1 progress bar plugin.
+								It has 12 different custom CSS background images and supports labels.
+								See below for the different customizations.
+							</p>
+							<p class="card-text">
+								A progress bar is used to provide a visual indicator of the status of an ongoing process to the user. It helps manage user expectations during operations that require waiting, such as file uploads, downloads, installations, form submissions, or data processing, thereby improving the overall user experience by reducing uncertainty and anxiety.
+							</p>
 
-						<p class="card-text">
-						Here is how you could put the control on your webpage<pre><code>
-&lt;div class="card-body"&gt;
-    &lt;div class="btn-group" role="group" aria-label="Basic example"&gt;
-        &lt;button onclick="toggleProgressBar($('#progress-bar1'))"&gt;Toggle&lt;/button&gt;
-        &lt;button onclick="showProgressBar($('#progress-bar1'))"&gt;Show&lt;/button&gt;
-        &lt;button onclick="hideProgressBar($('#progress-bar1'))"&gt;Hide&lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div id="progress-bar1"&gt;&lt;/div&gt;
-    &lt;script&gt;
-        $(document).ready(function() {
-            $('#progress-bar1').progressBar();
-        });
-    &lt;/script&gt;
-&lt;/div&gt;</code></pre>
-						Here is how you could integrate showing and hiding the progress bar in an AJAX call<pre><code>
-        $(document).ready(function() {
-            $('#progress-bar1').show();
+							<p class="card-text">
+								<a class="card-link" target="_blank" rel="noopener noreferrer" href="https://www.svgbackgrounds.com/">SVG Backgrounds</a> is the source for <a target="_blank" rel="noopener noreferrer" href="https://www.svgbackgrounds.com/elements/animated-svg-preloaders/">SVG Images</a> used in these Progress Bars.
+								Don't forget to provide attribution for those images in your project.
+							</p>
 
-            $.ajax({
-                url: 'your_api_endpoint',
-                type: 'GET', // or 'POST', 'PUT', 'DELETE', etc.
-                dataType: 'json', // expected data type from the server
-                success: function(data, textStatus, jqXHR) {
-                    // This function is called on success (HTTP 200 OK)
-                    console.log('Success callback: Request was successful.');
-                    console.log('Returned data:', data);
-                    // Process your REST data here
-                },
-                complete: function(jqXHR, textStatus) {
-                    $('#progress-bar1').hide();
-                    // This function is always called, regardless of success or failure
-                    console.log('Complete callback: Request finished (success or error).');
-                }
-            });
-        });</code></pre>
-						</p>
+							<p class="card-text">
+								Here is how you could put the control on your webpage<pre><code>
+	&lt;div class="card-body"&gt;
+		&lt;div class="btn-group" role="group" aria-label="Basic example"&gt;
+			&lt;button onclick="toggleProgressBar($('#progress-bar1'))"&gt;Toggle&lt;/button&gt;
+			&lt;button onclick="showProgressBar($('#progress-bar1'))"&gt;Show&lt;/button&gt;
+			&lt;button onclick="hideProgressBar($('#progress-bar1'))"&gt;Hide&lt;/button&gt;
+		&lt;/div&gt;
+		&lt;div id="progress-bar1"&gt;&lt;/div&gt;
+		&lt;script&gt;
+			$(document).ready(function() {
+				$('#progress-bar1').progressBar();
+			});
+		&lt;/script&gt;
+	&lt;/div&gt;</code></pre>
+							Here is how you could integrate showing and hiding the progress bar in an AJAX call<pre><code>
+			$(document).ready(function() {
+				$('#progress-bar1').show();
 
-						<p class="card-text">
-							Download <a href="https://github.com/chuckhutchinson2/progress-bar/archive/refs/tags/progress-bar-1.0.zip">Release 1.0</a>
-						</p>
+				$.ajax({
+					url: 'your_api_endpoint',
+					type: 'GET', // or 'POST', 'PUT', 'DELETE', etc.
+					dataType: 'json', // expected data type from the server
+					success: function(data, textStatus, jqXHR) {
+						// This function is called on success (HTTP 200 OK)
+						console.log('Success callback: Request was successful.');
+						console.log('Returned data:', data);
+						// Process your REST data here
+					},
+					complete: function(jqXHR, textStatus) {
+						$('#progress-bar1').hide();
+						// This function is always called, regardless of success or failure
+						console.log('Complete callback: Request finished (success or error).');
+					}
+				});
+			});</code></pre>
+							</p>
+
+							<p class="card-text">
+								Download <a href="https://github.com/chuckhutchinson2/progress-bar/archive/refs/tags/progress-bar-1.0.zip">Release 1.0</a>
+							</p>
+						</div>
 					</div>
 				</div>
-
 			</div>
 		</div>
 		<div class="row row-cols-1 row-cols-md-2 g-2 py-2">
