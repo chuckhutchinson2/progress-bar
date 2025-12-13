@@ -26,9 +26,29 @@
         font-family: monospace; /* Ensures code font is used */
         white-space: pre-wrap; /* Ensures long lines wrap if needed */
     }
+
+.carousel-controls-bottom .carousel-control-prev,
+.carousel-controls-bottom .carousel-control-next {
+  position: relative;
+  left: auto;
+  right: auto;
+  transform: none;
+  width: auto;
+  display: inline-flex;
+  margin: 0 5px;
+}
+
+.carousel-controls-bottom .carousel-inner {
+  margin-bottom: 10px; /* Adjust spacing between slides and controls */
+}
+
+.carousel-controls-bottom .carousel-control-container {
+  text-align: center;
+  margin-top: 10px; /* Adjust spacing as needed */
+}
+
 </style>
 <script>
-// https://www.svgbackgrounds.com/elements/animated-svg-preloaders/
 
 function toggleProgressBar(container) {
 	container.toggle();
@@ -123,409 +143,497 @@ function hideProgressBar(container) {
 				</div>
 			</div>
 		</div>
-		<div class="row row-cols-1 row-cols-md-2 g-2 py-2">
+		<div class="row row-cols-1 row-cols-md-1 g-2 py-2">
 			<div class="col">
-				<div class="card p-3 bg-light">
-					<div class="card-header">Default</div>
+				<div class="card">
 					<div class="card-body">
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<button onclick="toggleProgressBar($('#progress-bar1'))">Toggle</button>
-							<button onclick="showProgressBar($('#progress-bar1'))">Show</button>
-							<button onclick="hideProgressBar($('#progress-bar1'))">Hide</button>
+						<div class="card-header">
+							Sample Progress Bars
 						</div>
-						<div id="progress-bar1"></div>
-						<script>
-							$(document).ready(function() {
-								$('#progress-bar1').progressBar({ show: true });
-							});
-						</script>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card p-3 bg-light">
-					<div class="card-header">Spinning Gear</div>
-					<div class="card-body">
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<button onclick="toggleProgressBar($('#progress-bar4'))">Toggle</button>
-							<button onclick="showProgressBar($('#progress-bar4'))">Show</button>
-							<button onclick="hideProgressBar($('#progress-bar4'))">Hide</button>
-						</div>
-						<div id="progress-bar4"></div>
-						<script>
-							$(document).ready(function() {
-								$('#progress-bar4').progressBar({ show: true, backgroundClass: 'progressbar-background-spinning-gear' });
-							});
-						</script>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card p-3 bg-light">
-					<div class="card-header">Ripples</div>
-					<div class="card-body">
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<button onclick="toggleProgressBar($('#progress-bar5'))">Toggle</button>
-							<button onclick="showProgressBar($('#progress-bar5'))">Show</button>
-							<button onclick="hideProgressBar($('#progress-bar5'))">Hide</button>
-						</div>
-						<div id="progress-bar5"></div>
-						<script>
-							$(document).ready(function() {
-								$('#progress-bar5').progressBar({ show: true, backgroundClass: 'progressbar-background-ripples' });
-							});
-						</script>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card p-3 bg-light">
-					<div class="card-header">Bouncing Circles</div>
-					<div class="card-body">
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<button onclick="toggleProgressBar($('#progress-bar6'))">Toggle</button>
-							<button onclick="showProgressBar($('#progress-bar6'))">Show</button>
-							<button onclick="hideProgressBar($('#progress-bar6'))">Hide</button>
-						</div>
-						<div id="progress-bar6"></div>
-						<script>
-							$(document).ready(function() {
-								$('#progress-bar6').progressBar({ show: true, backgroundClass: 'progressbar-background-bouncing-circles' });
-							});
-						</script>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card p-3 bg-light">
-					<div class="card-header">Motion Blur</div>
-					<div class="card-body">
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<button onclick="toggleProgressBar($('#progress-bar7'))">Toggle</button>
-							<button onclick="showProgressBar($('#progress-bar7'))">Show</button>
-							<button onclick="hideProgressBar($('#progress-bar7'))">Hide</button>
-						</div>
-						<div id="progress-bar7"></div>
-						<script>
-							$(document).ready(function() {
-								$('#progress-bar7').progressBar({ show: true, backgroundClass: 'progressbar-background-motion-blur' });
-							});
-						</script>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card p-3 bg-light">
-					<div class="card-header">Infinite</div>
-					<div class="card-body">
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<button onclick="toggleProgressBar($('#progress-bar8'))">Toggle</button>
-							<button onclick="showProgressBar($('#progress-bar8'))">Show</button>
-							<button onclick="hideProgressBar($('#progress-bar8'))">Hide</button>
-						</div>
-						<div id="progress-bar8"></div>
-						<script>
-							$(document).ready(function() {
-								$('#progress-bar8').progressBar({ show: true, backgroundClass: 'progressbar-background-infinite' });
-							});
-						</script>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card p-3 bg-light">
-					<div class="card-header">Bouncing Squares</div>
-					<div class="card-body">
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<button onclick="toggleProgressBar($('#progress-bar9'))">Toggle</button>
-							<button onclick="showProgressBar($('#progress-bar9'))">Show</button>
-							<button onclick="hideProgressBar($('#progress-bar9'))">Hide</button>
-						</div>
-						<div id="progress-bar9"></div>
-						<script>
-							$(document).ready(function() {
-								$('#progress-bar9').progressBar({ show: true, backgroundClass: 'progressbar-background-bouncing-squares' });
-							});
-						</script>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card p-3 bg-light">
-					<div class="card-header">Bouncing Ball</div>
-					<div class="card-body">
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<button onclick="toggleProgressBar($('#progress-bar10'))">Toggle</button>
-							<button onclick="showProgressBar($('#progress-bar10'))">Show</button>
-							<button onclick="hideProgressBar($('#progress-bar10'))">Hide</button>
-						</div>
-						<div id="progress-bar10"></div>
-						<script>
-							$(document).ready(function() {
-								$('#progress-bar10').progressBar({ show: true, backgroundClass: 'progressbar-background-bouncing-ball' });
-							});
-						</script>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card p-3 bg-light">
-					<div class="card-header">Fade Staggered Circles</div>
-					<div class="card-body">
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<button onclick="toggleProgressBar($('#progress-bar11'))">Toggle</button>
-							<button onclick="showProgressBar($('#progress-bar11'))">Show</button>
-							<button onclick="hideProgressBar($('#progress-bar11'))">Hide</button>
-						</div>
-						<div id="progress-bar11"></div>
-						<script>
-							$(document).ready(function() {
-								$('#progress-bar11').progressBar({ show: true, backgroundClass: 'progressbar-background-fade-staggered-circles' });
-							});
-						</script>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card p-3 bg-light">
-					<div class="card-header">Fade Staggered Squares</div>
-					<div class="card-body">
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<button onclick="toggleProgressBar($('#progress-bar12'))">Toggle</button>
-							<button onclick="showProgressBar($('#progress-bar12'))">Show</button>
-							<button onclick="hideProgressBar($('#progress-bar12'))">Hide</button>
-						</div>
-						<div id="progress-bar12"></div>
-						<script>
-							$(document).ready(function() {
-								$('#progress-bar12').progressBar({ show: true, backgroundClass: 'progressbar-background-fade-staggered-squares' });
-							});
-						</script>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card p-3 bg-light">
-					<div class="card-header">Gears Spinner</div>
-					<div class="card-body">
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<button onclick="toggleProgressBar($('#progress-bar13'))">Toggle</button>
-							<button onclick="showProgressBar($('#progress-bar13'))">Show</button>
-							<button onclick="hideProgressBar($('#progress-bar13'))">Hide</button>
-						</div>
-						<div id="progress-bar13"></div>
-						<script>
-							$(document).ready(function() {
-								$('#progress-bar13').progressBar({ show: true, backgroundClass: 'progressbar-background-gears-spinner' });
-							});
-						</script>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card p-3 bg-light">
-					<div class="card-header">Spinning Dots</div>
-					<div class="card-body">
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<button onclick="toggleProgressBar($('#progress-bar14'))">Toggle</button>
-							<button onclick="showProgressBar($('#progress-bar14'))">Show</button>
-							<button onclick="hideProgressBar($('#progress-bar14'))">Hide</button>
-						</div>
-						<div id="progress-bar14"></div>
-						<script>
-							$(document).ready(function() {
-								$('#progress-bar14').progressBar({ show: true, backgroundClass: 'progressbar-background-spinning-dots' });
-							});
-						</script>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card p-3 bg-light">
-					<div class="card-header">Custom Text Message</div>
-					<div class="card-body">
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<button onclick="toggleProgressBar($('#progress-bar15'))">Toggle</button>
-							<button onclick="showProgressBar($('#progress-bar15'))">Show</button>
-							<button onclick="hideProgressBar($('#progress-bar15'))">Hide</button>
-						</div>
-						<div id="progress-bar15"></div>
-						<script>
-							$(document).ready(function() {
-								$('#progress-bar15').progressBar({ show: true, message: 'Loading...' });
-							});
-						</script>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card p-3 bg-light">
-					<div class="card-header">Custom HTML Message</div>
-					<div class="card-body">
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<button onclick="toggleProgressBar($('#progress-bar16'))">Toggle</button>
-							<button onclick="showProgressBar($('#progress-bar16'))">Show</button>
-							<button onclick="hideProgressBar($('#progress-bar16'))">Hide</button>
-						</div>
-						<div id="progress-bar16"></div>
-						<script>
-							$(document).ready(function() {
-							var myHtmlBlock = '<h1>Just a moment...</h1>' +
-								                  '<p>This is a custom message with <em>markup</em>.</p>';
+						<div class="carousel-container py-2">
+							<div id="card-carousel" class="carousel carousel-dark slide">
+								<div class="carousel-inner">
+									<div class="carousel-item active">
+										<div class="card p-3 bg-light">
+											<div class="card-header">Default</div>
+											<div class="card-body">
+												<div class="btn-group" role="group" aria-label="Basic example">
+													<button onclick="toggleProgressBar($('#progress-bar1'))">Toggle</button>
+													<button onclick="showProgressBar($('#progress-bar1'))">Show</button>
+													<button onclick="hideProgressBar($('#progress-bar1'))">Hide</button>
+												</div>
+												<div id="progress-bar1"></div>
+												<script>
+										$(document).ready(function() {
+											$('#progress-bar1').progressBar({ show: true });
+										});
 
-								$('#progress-bar16').progressBar({ show: true, message: myHtmlBlock });
-							});
-						</script>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card p-3 bg-light">
-					<div class="card-header">Custom 'Blinking' Text Message</div>
-					<div class="card-body">
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<button onclick="toggleProgressBar($('#progress-bar17'))">Toggle</button>
-							<button onclick="showProgressBar($('#progress-bar17'))">Show</button>
-							<button onclick="hideProgressBar($('#progress-bar17'))">Hide</button>
-						</div>
-						<div id="progress-bar17"></div>
-						<script>
-							$(document).ready(function() {
-								$('#progress-bar17').progressBar({ show: true, message: 'Loading...', blinkMessage: true });
-							});
-						</script>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card p-3 bg-light">
-					<div class="card-header">Custom 'Blinking' HTML Message</div>
-					<div class="card-body">
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<button onclick="toggleProgressBar($('#progress-bar18'))">Toggle</button>
-							<button onclick="showProgressBar($('#progress-bar18'))">Show</button>
-							<button onclick="hideProgressBar($('#progress-bar18'))">Hide</button>
-						</div>
-						<div id="progress-bar18"></div>
-						<script>
-							$(document).ready(function() {
-								var myHtmlBlock = '<h1>Just a moment...</h1>' +
-								                  '<p>This is a custom message with <em>markup</em>.</p>';
+								</script>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="card p-3 bg-light">
+											<div class="card-header">Ripples</div>
+											<div class="card-body">
+												<div class="btn-group" role="group" aria-label="Basic example">
+													<button onclick="toggleProgressBar($('#progress-bar5'))">Toggle</button>
+													<button onclick="showProgressBar($('#progress-bar5'))">Show</button>
+													<button onclick="hideProgressBar($('#progress-bar5'))">Hide</button>
+												</div>
+												<div id="progress-bar5"></div>
+												<script>
+										$(document).ready(function() {
+											$('#progress-bar5').progressBar({ show: true, backgroundClass: 'progressbar-background-ripples' });
+										});
 
-								$('#progress-bar18').progressBar({ show: true, message: myHtmlBlock, blinkMessage: true });
-							});
-						</script>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card p-3 bg-light">
-					<div class="card-header">'Blinking' Gears Spinner</div>
-					<div class="card-body">
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<button onclick="toggleProgressBar($('#progress-bar19'))">Toggle</button>
-							<button onclick="showProgressBar($('#progress-bar19'))">Show</button>
-							<button onclick="hideProgressBar($('#progress-bar19'))">Hide</button>
-						</div>
-						<div id="progress-bar19"></div>
-						<script>
-							$(document).ready(function() {
-								$('#progress-bar19').progressBar({ show: true, backgroundClass: 'progressbar-background-gears-spinner', blinkOverlay: true });
-							});
-						</script>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card p-3 bg-light">
-					<div class="card-header">'Blinking' Spinning Dots</div>
-					<div class="card-body">
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<button onclick="toggleProgressBar($('#progress-bar20'))">Toggle</button>
-							<button onclick="showProgressBar($('#progress-bar20'))">Show</button>
-							<button onclick="hideProgressBar($('#progress-bar20'))">Hide</button>
-						</div>
-						<div id="progress-bar20"></div>
-						<script>
-							$(document).ready(function() {
-								$('#progress-bar20').progressBar({ show: true, backgroundClass: 'progressbar-background-spinning-dots', blinkOverlay: true  });
-							});
-						</script>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card p-3 bg-light">
-					<div class="card-header">'Blinking' Gears Spinner and 'Blinking' text message</div>
-					<div class="card-body">
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<button onclick="toggleProgressBar($('#progress-bar21'))">Toggle</button>
-							<button onclick="showProgressBar($('#progress-bar21'))">Show</button>
-							<button onclick="hideProgressBar($('#progress-bar21'))">Hide</button>
-						</div>
-						<div id="progress-bar21"></div>
-						<script>
-							$(document).ready(function() {
-								$('#progress-bar21').progressBar({ show: true, backgroundClass: 'progressbar-background-gears-spinner', message: 'Loading...', blinkMessage: true, blinkOverlay: true });
-							});
-						</script>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card p-3 bg-light">
-					<div class="card-header">'Blinking' Spinning Dots and 'Blinking' Custom HTML message</div>
-					<div class="card-body">
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<button onclick="toggleProgressBar($('#progress-bar22'))">Toggle</button>
-							<button onclick="showProgressBar($('#progress-bar22'))">Show</button>
-							<button onclick="hideProgressBar($('#progress-bar22'))">Hide</button>
-						</div>
-						<div id="progress-bar22"></div>
-						<script>
-							$(document).ready(function() {
-								var myHtmlBlock = '<h1>Just a moment...</h1>' +
-												  '<p>This is a custom message with <em>markup</em>.</p>';
+								</script>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="card p-3 bg-light">
+											<div class="card-header">Spinning Gear</div>
+											<div class="card-body">
+												<div class="btn-group" role="group" aria-label="Basic example">
+													<button onclick="toggleProgressBar($('#progress-bar4'))">Toggle</button>
+													<button onclick="showProgressBar($('#progress-bar4'))">Show</button>
+													<button onclick="hideProgressBar($('#progress-bar4'))">Hide</button>
+												</div>
+												<div id="progress-bar4"></div>
+												<script>
+										$(document).ready(function() {
+											$('#progress-bar4').progressBar({ show: true, backgroundClass: 'progressbar-background-spinning-gear' });
+										});
 
-								$('#progress-bar22').progressBar({ show: true, backgroundClass: 'progressbar-background-spinning-dots', message: myHtmlBlock, blinkMessage: true, blinkOverlay: true  });
-							});
-						</script>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card p-3 bg-light">
-					<div class="card-header">Day of Week</div>
-					<div class="card-body">
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<button onclick="toggleProgressBar($('#progress-bar2'))">Toggle</button>
-							<button onclick="showProgressBar($('#progress-bar2'))">Show</button>
-							<button onclick="hideProgressBar($('#progress-bar2'))">Hide</button>
+								</script>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="card p-3 bg-light">
+											<div class="card-header">Bouncing Circles</div>
+											<div class="card-body">
+												<div class="btn-group" role="group" aria-label="Basic example">
+													<button onclick="toggleProgressBar($('#progress-bar6'))">Toggle</button>
+													<button onclick="showProgressBar($('#progress-bar6'))">Show</button>
+													<button onclick="hideProgressBar($('#progress-bar6'))">Hide</button>
+												</div>
+												<div id="progress-bar6"></div>
+												<script>
+										$(document).ready(function() {
+											$('#progress-bar6').progressBar({ show: true, backgroundClass: 'progressbar-background-bouncing-circles' });
+										});
+
+								</script>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="card p-3 bg-light">
+											<div class="card-header">Motion Blur</div>
+											<div class="card-body">
+												<div class="btn-group" role="group" aria-label="Basic example">
+													<button onclick="toggleProgressBar($('#progress-bar7'))">Toggle</button>
+													<button onclick="showProgressBar($('#progress-bar7'))">Show</button>
+													<button onclick="hideProgressBar($('#progress-bar7'))">Hide</button>
+												</div>
+												<div id="progress-bar7"></div>
+												<script>
+										$(document).ready(function() {
+											$('#progress-bar7').progressBar({ show: true, backgroundClass: 'progressbar-background-motion-blur' });
+										});
+
+								</script>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="card p-3 bg-light">
+											<div class="card-header">Infinite</div>
+											<div class="card-body">
+												<div class="btn-group" role="group" aria-label="Basic example">
+													<button onclick="toggleProgressBar($('#progress-bar8'))">Toggle</button>
+													<button onclick="showProgressBar($('#progress-bar8'))">Show</button>
+													<button onclick="hideProgressBar($('#progress-bar8'))">Hide</button>
+												</div>
+												<div id="progress-bar8"></div>
+												<script>
+										$(document).ready(function() {
+											$('#progress-bar8').progressBar({ show: true, backgroundClass: 'progressbar-background-infinite' });
+										});
+
+								</script>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="card p-3 bg-light">
+											<div class="card-header">Bouncing Squares</div>
+											<div class="card-body">
+												<div class="btn-group" role="group" aria-label="Basic example">
+													<button onclick="toggleProgressBar($('#progress-bar9'))">Toggle</button>
+													<button onclick="showProgressBar($('#progress-bar9'))">Show</button>
+													<button onclick="hideProgressBar($('#progress-bar9'))">Hide</button>
+												</div>
+												<div id="progress-bar9"></div>
+												<script>
+										$(document).ready(function() {
+											$('#progress-bar9').progressBar({ show: true, backgroundClass: 'progressbar-background-bouncing-squares' });
+										});
+
+								</script>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="card p-3 bg-light">
+											<div class="card-header">Bouncing Ball</div>
+											<div class="card-body">
+												<div class="btn-group" role="group" aria-label="Basic example">
+													<button onclick="toggleProgressBar($('#progress-bar10'))">Toggle</button>
+													<button onclick="showProgressBar($('#progress-bar10'))">Show</button>
+													<button onclick="hideProgressBar($('#progress-bar10'))">Hide</button>
+												</div>
+												<div id="progress-bar10"></div>
+												<script>
+										$(document).ready(function() {
+											$('#progress-bar10').progressBar({ show: true, backgroundClass: 'progressbar-background-bouncing-ball' });
+										});
+
+								</script>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="card p-3 bg-light">
+											<div class="card-header">Fade Staggered Circles</div>
+											<div class="card-body">
+												<div class="btn-group" role="group" aria-label="Basic example">
+													<button onclick="toggleProgressBar($('#progress-bar11'))">Toggle</button>
+													<button onclick="showProgressBar($('#progress-bar11'))">Show</button>
+													<button onclick="hideProgressBar($('#progress-bar11'))">Hide</button>
+												</div>
+												<div id="progress-bar11"></div>
+												<script>
+										$(document).ready(function() {
+											$('#progress-bar11').progressBar({ show: true, backgroundClass: 'progressbar-background-fade-staggered-circles' });
+										});
+
+								</script>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="card p-3 bg-light">
+											<div class="card-header">Fade Staggered Squares</div>
+											<div class="card-body">
+												<div class="btn-group" role="group" aria-label="Basic example">
+													<button onclick="toggleProgressBar($('#progress-bar12'))">Toggle</button>
+													<button onclick="showProgressBar($('#progress-bar12'))">Show</button>
+													<button onclick="hideProgressBar($('#progress-bar12'))">Hide</button>
+												</div>
+												<div id="progress-bar12"></div>
+												<script>
+										$(document).ready(function() {
+											$('#progress-bar12').progressBar({ show: true, backgroundClass: 'progressbar-background-fade-staggered-squares' });
+										});
+
+								</script>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="card p-3 bg-light">
+											<div class="card-header">Gears Spinner</div>
+											<div class="card-body">
+												<div class="btn-group" role="group" aria-label="Basic example">
+													<button onclick="toggleProgressBar($('#progress-bar13'))">Toggle</button>
+													<button onclick="showProgressBar($('#progress-bar13'))">Show</button>
+													<button onclick="hideProgressBar($('#progress-bar13'))">Hide</button>
+												</div>
+												<div id="progress-bar13"></div>
+												<script>
+										$(document).ready(function() {
+											$('#progress-bar13').progressBar({ show: true, backgroundClass: 'progressbar-background-gears-spinner' });
+										});
+
+								</script>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="card p-3 bg-light">
+											<div class="card-header">Spinning Dots</div>
+											<div class="card-body">
+												<div class="btn-group" role="group" aria-label="Basic example">
+													<button onclick="toggleProgressBar($('#progress-bar14'))">Toggle</button>
+													<button onclick="showProgressBar($('#progress-bar14'))">Show</button>
+													<button onclick="hideProgressBar($('#progress-bar14'))">Hide</button>
+												</div>
+												<div id="progress-bar14"></div>
+												<script>
+										$(document).ready(function() {
+											$('#progress-bar14').progressBar({ show: true, backgroundClass: 'progressbar-background-spinning-dots' });
+										});
+
+								</script>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="card p-3 bg-light">
+											<div class="card-header">Custom Text Message</div>
+											<div class="card-body">
+												<div class="btn-group" role="group" aria-label="Basic example">
+													<button onclick="toggleProgressBar($('#progress-bar15'))">Toggle</button>
+													<button onclick="showProgressBar($('#progress-bar15'))">Show</button>
+													<button onclick="hideProgressBar($('#progress-bar15'))">Hide</button>
+												</div>
+												<div id="progress-bar15"></div>
+												<script>
+										$(document).ready(function() {
+											$('#progress-bar15').progressBar({ show: true, message: 'Loading...' });
+										});
+
+								</script>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="card p-3 bg-light">
+											<div class="card-header">Custom HTML Message</div>
+											<div class="card-body">
+												<div class="btn-group" role="group" aria-label="Basic example">
+													<button onclick="toggleProgressBar($('#progress-bar16'))">Toggle</button>
+													<button onclick="showProgressBar($('#progress-bar16'))">Show</button>
+													<button onclick="hideProgressBar($('#progress-bar16'))">Hide</button>
+												</div>
+												<div id="progress-bar16"></div>
+												<script>
+										$(document).ready(function() {
+										var myHtmlBlock = '<h1>Just a moment...</h1>' +
+															  '<p>This is a custom message with <em>markup</em>.</p>';
+
+											$('#progress-bar16').progressBar({ show: true, message: myHtmlBlock });
+										});
+
+								</script>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div style="display:none">
+											<div id="id1" class="card">
+												<div class="card-body">
+													<h5 class="card-title">Card title</h5>
+													<p class="card-text">
+													The HTML for this progress bar was an entire div that was hidden on the page but then embedded in the progress bar</p>
+													<a href="#" class="btn btn-primary">Go somewhere</a>
+													<div class="alert alert-primary" role="alert">
+														A simple primary alert—check it out!
+													</div>
+												</div>
+
+											</div>
+										</div>
+										<div class="card p-3 bg-light">
+											<div class="card-header">Custom HTML Message with $('#id1').html()</div>
+											<div class="card-body">
+												<div class="btn-group" role="group" aria-label="Basic example">
+													<button onclick="toggleProgressBar($('#progress-bar23'))">Toggle</button>
+													<button onclick="showProgressBar($('#progress-bar23'))">Show</button>
+													<button onclick="hideProgressBar($('#progress-bar23'))">Hide</button>
+												</div>
+												<div id="progress-bar23"></div>
+												<script>
+										$(document).ready(function() {
+											var myHtmlBlock = $('#id1').html();
+											$('#progress-bar23').progressBar({ show: true, message: myHtmlBlock });
+										});
+
+								</script>
+											</div>
+										</div>
+									</div>
+
+									<div class="carousel-item">
+										<div class="card p-3 bg-light">
+											<div class="card-header">Custom 'Blinking' Text Message</div>
+											<div class="card-body">
+												<div class="btn-group" role="group" aria-label="Basic example">
+													<button onclick="toggleProgressBar($('#progress-bar17'))">Toggle</button>
+													<button onclick="showProgressBar($('#progress-bar17'))">Show</button>
+													<button onclick="hideProgressBar($('#progress-bar17'))">Hide</button>
+												</div>
+												<div id="progress-bar17"></div>
+												<script>
+										$(document).ready(function() {
+											$('#progress-bar17').progressBar({ show: true, message: 'Loading...', blinkMessage: true });
+										});
+
+								</script>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="card p-3 bg-light">
+											<div class="card-header">Custom 'Blinking' HTML Message</div>
+											<div class="card-body">
+												<div class="btn-group" role="group" aria-label="Basic example">
+													<button onclick="toggleProgressBar($('#progress-bar18'))">Toggle</button>
+													<button onclick="showProgressBar($('#progress-bar18'))">Show</button>
+													<button onclick="hideProgressBar($('#progress-bar18'))">Hide</button>
+												</div>
+												<div id="progress-bar18"></div>
+												<script>
+										$(document).ready(function() {
+											var myHtmlBlock = '<h1>Just a moment...</h1>' +
+															  '<p>This is a custom message with <em>markup</em>.</p>';
+
+											$('#progress-bar18').progressBar({ show: true, message: myHtmlBlock, blinkMessage: true });
+										});
+
+								</script>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="card p-3 bg-light">
+											<div class="card-header">'Blinking' Gears Spinner</div>
+											<div class="card-body">
+												<div class="btn-group" role="group" aria-label="Basic example">
+													<button onclick="toggleProgressBar($('#progress-bar19'))">Toggle</button>
+													<button onclick="showProgressBar($('#progress-bar19'))">Show</button>
+													<button onclick="hideProgressBar($('#progress-bar19'))">Hide</button>
+												</div>
+												<div id="progress-bar19"></div>
+												<script>
+										$(document).ready(function() {
+											$('#progress-bar19').progressBar({ show: true, backgroundClass: 'progressbar-background-gears-spinner', blinkOverlay: true });
+										});
+
+								</script>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="card p-3 bg-light">
+											<div class="card-header">'Blinking' Spinning Dots</div>
+											<div class="card-body">
+												<div class="btn-group" role="group" aria-label="Basic example">
+													<button onclick="toggleProgressBar($('#progress-bar20'))">Toggle</button>
+													<button onclick="showProgressBar($('#progress-bar20'))">Show</button>
+													<button onclick="hideProgressBar($('#progress-bar20'))">Hide</button>
+												</div>
+												<div id="progress-bar20"></div>
+												<script>
+										$(document).ready(function() {
+											$('#progress-bar20').progressBar({ show: true, backgroundClass: 'progressbar-background-spinning-dots', blinkOverlay: true  });
+										});
+
+								</script>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="card p-3 bg-light">
+											<div class="card-header">'Blinking' Gears Spinner and 'Blinking' text message</div>
+											<div class="card-body">
+												<div class="btn-group" role="group" aria-label="Basic example">
+													<button onclick="toggleProgressBar($('#progress-bar21'))">Toggle</button>
+													<button onclick="showProgressBar($('#progress-bar21'))">Show</button>
+													<button onclick="hideProgressBar($('#progress-bar21'))">Hide</button>
+												</div>
+												<div id="progress-bar21"></div>
+												<script>
+										$(document).ready(function() {
+											$('#progress-bar21').progressBar({ show: true, backgroundClass: 'progressbar-background-gears-spinner', message: 'Loading...', blinkMessage: true, blinkOverlay: true });
+										});
+
+								</script>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="card p-3 bg-light">
+											<div class="card-header">'Blinking' Spinning Dots and 'Blinking' Custom HTML message</div>
+											<div class="card-body">
+												<div class="btn-group" role="group" aria-label="Basic example">
+													<button onclick="toggleProgressBar($('#progress-bar22'))">Toggle</button>
+													<button onclick="showProgressBar($('#progress-bar22'))">Show</button>
+													<button onclick="hideProgressBar($('#progress-bar22'))">Hide</button>
+												</div>
+												<div id="progress-bar22"></div>
+												<script>
+										$(document).ready(function() {
+											var myHtmlBlock = '<h1>Just a moment...</h1>' +
+															  '<p>This is a custom message with <em>markup</em>.</p>';
+
+											$('#progress-bar22').progressBar({ show: true, backgroundClass: 'progressbar-background-spinning-dots', message: myHtmlBlock, blinkMessage: true, blinkOverlay: true  });
+										});
+
+								</script>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="card p-3 bg-light">
+											<div class="card-header">Day of Week</div>
+											<div class="card-body">
+												<div class="btn-group" role="group" aria-label="Basic example">
+													<button onclick="toggleProgressBar($('#progress-bar2'))">Toggle</button>
+													<button onclick="showProgressBar($('#progress-bar2'))">Show</button>
+													<button onclick="hideProgressBar($('#progress-bar2'))">Hide</button>
+												</div>
+												<div id="progress-bar2"></div>
+												<script>
+										$(document).ready(function() {
+											$('#progress-bar2').progressBar({ show: true, dowBackground: true });
+										});
+
+								</script>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="card p-3 bg-light">
+											<div class="card-header">Random</div>
+											<div class="card-body">
+												<div class="btn-group" role="group" aria-label="Basic example">
+													<button onclick="toggleProgressBar($('#progress-bar3'))">Toggle</button>
+													<button onclick="showProgressBar($('#progress-bar3'))">Show</button>
+													<button onclick="hideProgressBar($('#progress-bar3'))">Hide</button>
+												</div>
+												<div id="progress-bar3"></div>
+												<script>
+										$(document).ready(function() {
+											$('#progress-bar3').progressBar({ show: true, randomBackground: true });
+										});
+
+								</script>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="carousel-controls-bottom">
+								<div class="float-start">
+									<button class="carousel-control-prev carousel-dark" type="button" data-bs-target="#card-carousel" data-bs-slide="prev">
+										<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+										<span class="visually-hidden">Previous</span>
+<!--										Previous-->
+									</button>
+								</div>
+								<div class="float-end">
+									<button class="carousel-control-next carousel-dark" type="button" data-bs-target="#card-carousel" data-bs-slide="next">
+										<span class="carousel-control-next-icon" aria-hidden="true"></span>
+										<span class="visually-hidden">Next</span>
+<!--										Next-->
+									</button>
+								</div>
+							</div>
 						</div>
-						<div id="progress-bar2"></div>
-						<script>
-							$(document).ready(function() {
-								$('#progress-bar2').progressBar({ show: true, dowBackground: true });
-							});
-						</script>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card p-3 bg-light">
-					<div class="card-header">Random</div>
-					<div class="card-body">
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<button onclick="toggleProgressBar($('#progress-bar3'))">Toggle</button>
-							<button onclick="showProgressBar($('#progress-bar3'))">Show</button>
-							<button onclick="hideProgressBar($('#progress-bar3'))">Hide</button>
-						</div>
-						<div id="progress-bar3"></div>
-						<script>
-							$(document).ready(function() {
-								$('#progress-bar3').progressBar({ show: true, randomBackground: true });
-							});
-						</script>
 					</div>
 				</div>
 			</div>
